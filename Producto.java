@@ -1,10 +1,20 @@
+import java.util.List;
+
 public class Producto {
 //Atributos
     private String nombre;
     private String SKU;
     private String descripcion;
-    private String tallasDisponibles;
+    private List<String> tallasDisponibles;
     private int cantidadPorTalla;
+//Constructor
+    
+    public Producto(String SKU, String nombre, String descripcion, List<String> tallasDisponibles) {
+        this.SKU = SKU;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.tallasDisponibles = tallasDisponibles;
+    }
 //Getters
     //Nombre
     public String getNombre(){
@@ -19,7 +29,7 @@ public class Producto {
         return descripcion;
     }
     //Tallas disponibles
-    public String getTallasDisponibles(){
+    public List<String> getTallasDisponibles(){
         return tallasDisponibles;
     }
     //Cantidad por talla
