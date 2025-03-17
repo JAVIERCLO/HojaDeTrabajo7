@@ -1,20 +1,39 @@
-public class Nodo {
+public class Nodo<K extends Comparable<K>, V> {
+    private K clave;
+    private V valor;
+    private Nodo<K, V> left, right;
 
-    private Nodo left;
-    private Nodo right;
-    private Nodo root;
-    
-
-    private void inorder(Nodo n) {
-        if (n != null) {
-            inorder(n.getLeft());
-            n.imprimirDato();
-            inorder(n.getRight());
-        }
+    public Nodo(K clave, V valor) {
+        this.clave = clave;
+        this.valor = valor;
+        this.left = this.right = null;
     }
 
-    public void inorder() {
-        this.inorder(this.root);
+    public K getClave() {
+        return clave;
     }
 
+    public V getValor() {
+        return valor;
+    }
+
+    public void setValor(V valor) {
+        this.valor = valor;
+    }
+
+    public Nodo<K, V> getLeft() {
+        return left;
+    }
+
+    public void setLeft(Nodo<K, V> Left) {
+        this.left = Left;
+    }
+
+    public Nodo<K, V> getRight() {
+        return right;
+    }
+
+    public void setRight(Nodo<K, V> right) {
+        this.right = right;
+    }
 }
