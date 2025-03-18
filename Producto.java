@@ -36,4 +36,7 @@ public class Producto {
     public int getCantidadPorTalla(){
         return cantidadPorTalla;
     }
+    public void setDescripcion(String descripcion) {
+       this.descripcion = descripcion;
+    }
 }
