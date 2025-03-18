@@ -39,4 +39,11 @@ public class Producto {
     public void setDescripcion(String descripcion) {
        this.descripcion = descripcion;
     }
+    @Override
+    public String toString() {
+        return "SKU: " + SKU + "\n" +
+               "Nombre: " + nombre + "\n" +
+               "Descripción: " + descripcion + "\n" +
+               "Tallas disponibles: " + (tallasDisponibles.isEmpty() ? "No hay tallas" : tallasDisponibles);
+    }
 }
