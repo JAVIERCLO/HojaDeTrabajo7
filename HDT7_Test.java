@@ -1,7 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.IOException;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class HDT7_Test {
@@ -10,13 +9,30 @@ public class HDT7_Test {
     String nombreArchivo = "inventario_prueba.csv";
     
     @Test
-    InsertTest(){
+    public void InsertTest(){
+        BinaryTree<String, Producto> arbolSKU = new BinaryTree<>();
         
+        // Crear y agregar producto
+        Producto producto = new Producto("123", "Jersey deportivo", "Playera para entrenar", List.of("M", "L"));
+        arbolSKU.insertar(producto.getSKU(), producto);
+        
+        // Verificar que se insertó correctamente
+        assertNotNull(arbolSKU.buscar("123"), "El producto debería existir en el árbol.");
     }
 
     @Test
-    searchTest(){
+    public void searchTest(){
+        BinaryTree<String, Producto> arbolSKU = new BinaryTree<>();
         
+        // Insertar producto
+        Producto producto = new Producto("456", "Chumpa impermeable", "Abrigo de nylon", List.of("S", "M"));
+        arbolSKU.insertar(producto.getSKU(), producto);
+        
+        // Buscar producto
+        Producto encontrado = arbolSKU.buscar("456");
+
+        assertNotNull(encontrado, "El producto debería encontrarse en el árbol.");
+        assertEquals("Chumpa impermeable", encontrado.getNombre(), "El nombre del producto debería coincidir.");
     }
 
     @Test
